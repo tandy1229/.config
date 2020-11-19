@@ -1,0 +1,9 @@
+export PATH="/usr/local/opt/node@12/bin:$PATH"
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
+export EDITOR=nvim
+export VISUAL=nvim
+export LESSOPEN="| /usr/local/Cellar/source-highlight/3.1.9_3/bin/src-hilite-lesspipe.sh %s"
+export LESS=" -R "
+export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"

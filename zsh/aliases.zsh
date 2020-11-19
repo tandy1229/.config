@@ -1,0 +1,12 @@
+alias ls='ls --color'
+alias cdiff='colordiff'
+alias ra='ranger'
+alias vim='nvim'
+alias l='ls -al'
+alias sudo='sudo -E'
+alias s='neofetch'
+alias t='tmux'
+alias pip='pip3'
+alias lg="lazygit"
+alias c='clear'
+alias ipy="ipython"

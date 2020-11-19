@@ -1,0 +1,10 @@
+nvim/
+nvimback/
+wireshark/
+xonsh/
+configstore/
+coc/
+ranger/.DS_Store
+zsh/ .DS_Store
+omf/
+.DS_Store
