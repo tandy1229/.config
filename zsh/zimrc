@@ -44,5 +44,6 @@ zmodule hlissner/zsh-autopair
 zmodule pabloariasal/zfm
 zmodule agkozak/zsh-z
 zmodule Aloxaf/fzf-tab
+zmodule wfxr/forgit
 # }}} End configuration added by Zim install
 
