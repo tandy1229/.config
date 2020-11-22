@@ -8,5 +8,5 @@ alias s='neofetch'
 alias t='tmux'
 alias pip='pip3'
 alias lg="lazygit"
-alias c='clear'
+alias cl='clear'
 alias ipy="ipython"
