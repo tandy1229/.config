@@ -7,6 +7,6 @@ coc/
 ranger/.DS_Store
 zsh/ .DS_Store
 omf/
-.DS_Store
+./.DS_Store
 bashtop/
 bpytop/
