@@ -1,4 +1,4 @@
-export FZF_DEFAULT_OPTS='--bind ctrl-e:down,ctrl-u:up --preview "[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (ccat --color=always {} || highlight -O ansi -l {} || cat {}) 2> /dev/null | head -500"'
+# export FZF_DEFAULT_OPTS='--bind ctrl-e:down,ctrl-u:up --preview "[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (ccat --color=always {} || highlight -O ansi -l {} || cat {}) 2> /dev/null | head -500"'
 
 # Setting fd as the default source for fzf
 # export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
@@ -40,7 +40,8 @@ _fzf_comprun() {
 # using "brew search" as source input
 # mnemonic [B]rew [I]nstall [P]lugin
 bip() {
-  local inst=$(brew search | fzf -m)
+#  local inst=$(brew search | fzf -m)
+  local inst=$(brew search | fzf-tmux --query="$1" +m --preview 'brew info {}')
 
   if [[ $inst ]]; then
     for prog in $(echo $inst);
@@ -180,4 +181,24 @@ b() {
         | fzf --ansi \
         | cut -d$'\t' -f2 \
         | xargs open
+}
+
+
+man-find() {
+    f=$(fd . $MANPATH/man${1:-1} -t f -x echo {/.} | fzf) && man $f
+}
+
+
+# Same as above, but with previews and works correctly with man pages in different sections.
+function fman() {
+    man -k . | fzf -q "$1" --prompt='man> '  --preview $'echo {} | tr -d \'()\' | awk \'{printf "%s ", $2} {print $1}\' | xargs -r man' | tr -d '()' | awk '{printf "%s ", $2} {print $1}' | xargs -r man
+}
+
+fif() {
+  if [ ! "$#" -gt 0 ]; then echo "Need a string to search for!"; return 1; fi
+  rg --files-with-matches --no-messages "$1" | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1' || rg --ignore-case --pretty --context 10 '$1' {}"
+}
+
+find-in-file() {
+	grep --line-buffered --color=never -r "" * | fzf
 }
