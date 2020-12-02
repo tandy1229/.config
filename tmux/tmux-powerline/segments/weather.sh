@@ -13,8 +13,8 @@ TMUX_POWERLINE_SEG_WEATHER_UPDATE_PERIOD_DEFAULT="600"
 #    $ mv ~/.tmux-powerlinerc.default ~/.tmux-powerlinerc
 # 2. You set TMUX_POWERLINE_SEG_WEATHER_LOCATION.
 
-if shell_is_bsd  && [ -f /user/local/bin/grep  ]; then
-	TMUX_POWERLINE_SEG_WEATHER_GREP_DEFAULT="/usr/local/bin/grep"
+if shell_is_bsd  && [ -f /user/local/bin/ggrep  ]; then
+	TMUX_POWERLINE_SEG_WEATHER_GREP_DEFAULT="/usr/local/bin/ggrep"
 else
 	TMUX_POWERLINE_SEG_WEATHER_GREP_DEFAULT="grep"
 fi
@@ -34,7 +34,7 @@ export TMUX_POWERLINE_SEG_WEATHER_GREP="${TMUX_POWERLINE_SEG_WEATHER_GREP_DEFAUL
 # 1. Go to Yahoo weather http://weather.yahoo.com/
 # 2. Find the weather for you location
 # 3. Copy the last numbers in that URL. e.g. "http://weather.yahoo.com/united-states/california/newport-beach-12796587/" has the numbers "12796587"
-TMUX_POWERLINE_SEG_WEATHER_LOCATION=""
+TMUX_POWERLINE_SEG_WEATHER_LOCATION="2365397"
 EORC
 	echo "$rccontents"
 }
