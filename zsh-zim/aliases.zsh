@@ -1,7 +1,5 @@
-alias ls='exa'
-# alias ls='ls --color'
+alias ls='ls --color'
 alias cdiff='colordiff'
-alias grep='grep --color'
 alias ra='ranger'
 alias vim='nvim'
 alias l='ls -al'
