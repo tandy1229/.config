@@ -22,7 +22,8 @@ zmodule homebrew
 
 zmodule git-info
 # A customizable version of steeef's prompt theme.
-zmodule sindresorhus/pure --source async.zsh --source pure.zsh
+# zmodule sindresorhus/pure --source async.zsh --source pure.zsh
+zmodule romkatv/powerlevel10k
 
 zmodule Aloxaf/fzf-tab
 # Additional completion definitions for Zsh.

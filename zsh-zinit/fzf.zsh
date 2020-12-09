@@ -8,6 +8,8 @@ export FZF_TMUX=1
 export FZF_TMUX_HEIGHT='80%'
 export fzf_preview_cmd='[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (ccat --color=always {} || highlight -O ansi -l {} || cat {}) 2> /dev/null | head -500'
 
+export FZF_DEFAULT_OPTS='--color=bg+:23 -m --bind ctrl-space:toggle,pgup:preview-up,pgdn:preview-down'
+
 # Use fd (https://github.com/sharkdp/fd) instead of the default find
 # command for listing path candidates.
 # - The first argument to the function ($1) is the base path to start traversal
@@ -77,14 +79,14 @@ bcp() {
 # and display a info quickview window for the currently marked application
 install() {
     local token
-    token=$(brew search --casks | fzf-tmux --query="$1" +m --preview 'brew cask info {}')
+    token=$(brew search --casks | fzf-tmux --query="$1" +m --preview 'brew info {} --cask')
 
     if [ "x$token" != "x" ]
     then
         echo "(I)nstall or open the (h)omepage of $token"
         read input
         if [ $input = "i" ] || [ $input = "I" ]; then
-            brew cask install $token
+            brew install $token --cask
         fi
         if [ $input = "h" ] || [ $input = "H" ]; then
             brew cask home $token
