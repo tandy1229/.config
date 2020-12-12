@@ -53,7 +53,7 @@ bip() {
 # Update (one or multiple) selected application(s)
 # mnemonic [B]rew [U]pdate [P]lugin
 bup() {
-  local upd=$(brew leaves | fzf -m)
+  local upd=$(brew leaves | fzf-tmux --query="$1" +m --preview 'brew info {}')
 
   if [[ $upd ]]; then
     for prog in $(echo $upd);
@@ -64,7 +64,7 @@ bup() {
 # Delete (one or multiple) selected application(s)
 # mnemonic [B]rew [C]lean [P]lugin (e.g. uninstall)
 bcp() {
-  local uninst=$(brew leaves | fzf -m)
+  local uninst=$(brew leaves | fzf-tmux --query="$1" +m --preview 'brew info {}')
 
   if [[ $uninst ]]; then
     for prog in $(echo $uninst);
@@ -85,10 +85,10 @@ install() {
         echo "(I)nstall or open the (h)omepage of $token"
         read input
         if [ $input = "i" ] || [ $input = "I" ]; then
-            brew cask install $token
+            brew install $token --cask
         fi
         if [ $input = "h" ] || [ $input = "H" ]; then
-            brew cask home $token
+            brew home $token --cask
         fi
     fi
 }
@@ -105,10 +105,10 @@ uninstall() {
         echo "(U)ninstall or open the (h)omepage of $token"
         read input
         if [ $input = "u" ] || [ $input = "U" ]; then
-            brew cask uninstall $token
+            brew uninstall $token --cask 
         fi
         if [ $input = "h" ] || [ $token = "h" ]; then
-            brew cask home $token
+            brew home $token --cask 
         fi
     fi
 }
