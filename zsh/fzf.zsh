@@ -78,7 +78,7 @@ bcp() {
 # and display a info quickview window for the currently marked application
 install() {
     local token
-    token=$(brew search --casks | fzf-tmux --query="$1" +m --preview 'brew cask info {}')
+    token=$(brew search --casks | fzf-tmux --query="$1" +m --preview 'brew info {} --cask')
 
     if [ "x$token" != "x" ]
     then
@@ -98,7 +98,7 @@ install() {
 # and display a info quickview window for the currently marked application
 uninstall() {
     local token
-    token=$(brew cask list | fzf-tmux --query="$1" +m --preview 'brew cask info {}')
+    token=$(brew list --cask | fzf-tmux --query="$1" +m --preview 'brew info {} --cask')
 
     if [ "x$token" != "x" ]
     then
