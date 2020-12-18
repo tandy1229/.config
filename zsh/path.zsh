@@ -1,4 +1,5 @@
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
+export HOMEBREW_NO_ANALYTICS=1
 export EDITOR=nvim
 #
 
@@ -16,4 +17,3 @@ export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/gnu-time/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/gnu-which/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/man-db/libexec/bin:$PATH"
-
