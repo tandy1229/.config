@@ -1,0 +1,35 @@
+#!/bin/bash
+if [[ "$(uname)" = "Darwin" ]]; then
+	# Homebrew
+	[ -z "$(which brew)" ] &&
+		curl -fsSLO https://cdn.jsdelivr.net/gh/Homebrew/install@master/install.sh &&
+		sed -i 's/BREW_REPO="https:\/\/github.com\/Homebrew\/brew"/BREW_REPO="https:\/\/mirrors.ustc.edu.cn\/brew.git"/g' install.sh &&
+		chmod +x ./install.sh &&
+		./install.sh &&
+		rm install.sh
+
+	echo "Updating homebrew"
+	brew cask install xquartz iterm2 keepingyouawake \
+		mat mactex osxfuse \
+		karabiner-elements maccy google-chrome
+
+	brew install \
+		fd ag exa ripgrep cmake cmus coreutils cscope exiftool doxygen liboauth \
+		fish git graphviz imagemagick gnupg \
+		tree vim wget zsh bash jq ruby python go highlight bat \
+		reattach-to-user-namespace bash-completion tmux gnuplot w3m yarn lazygit ccat \
+		fzf colordiff diffutils figlet git-delta gnu-sed \
+		gnu-tar gnu-time grep htop less make openssl rainbarf rsync \
+		shfmt bashtop shellcheck vint
+
+	brew tap universal-ctags/universal-ctags
+	brew install --HEAD universal-ctags
+
+	pip install ranger-fm pynvim ipython jupyter
+
+	brew install --HEAD neovim
+
+	command -v blsd >/dev/null ||
+		(bash <(curl -fL https://raw.githubusercontent.com/junegunn/blsd/master/install) && mv blsd ~/bin)
+
+fi
