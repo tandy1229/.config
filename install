@@ -33,3 +33,5 @@ if [[ "$(uname)" = "Darwin" ]]; then
 		(bash <(curl -fL https://raw.githubusercontent.com/junegunn/blsd/master/install) && mv blsd ~/bin)
 
 fi
+
+# tic -x tmux-256color.terminfo
