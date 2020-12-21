@@ -18,12 +18,12 @@ if [[ "$(uname)" = "Darwin" ]]; then
 		fish git graphviz imagemagick gnupg \
 		tree vim wget zsh bash jq ruby python go highlight bat \
 		reattach-to-user-namespace bash-completion tmux gnuplot w3m yarn lazygit ccat \
-		fzf colordiff diffutils figlet git-delta gnu-sed \
+		fzf colordiff diffutils figlet git-delta gnu-sed gawk \
 		gnu-tar gnu-time grep htop less make openssl rainbarf rsync \
 		shfmt bashtop shellcheck vint
 
 	brew tap universal-ctags/universal-ctags
-	brew install --HEAD universal-ctags
+	brew install --with-jansson --with-libyaml --HEAD universal-ctags/universal-ctags/universal-ctag
 
 	pip install ranger-fm pynvim ipython jupyter
 
