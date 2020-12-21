@@ -5,6 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+export GPG_TTY=$(tty)
 source ~/.config/zsh/zim.zsh
 source ~/.config/zsh/aliases.zsh
 source ~/.config/zsh/path.zsh
@@ -13,10 +14,6 @@ source ~/.config/zsh/fzf.zsh
 source ~/.config/zsh/competion.zsh
 # source ~/fzf-tab-completion/zsh/fzf-zsh-completion.sh
 # source ~/.config/zsh/completion.zsh
-
-
-# autojump
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

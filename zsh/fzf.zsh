@@ -44,7 +44,7 @@ command -v blsd > /dev/null && export FZF_ALT_C_COMMAND='blsd'
 command -v tree > /dev/null && export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 
 bip() {
-#  local inst=$(brew search | fzf -m)
+ # local inst=$(brew search | fzf -m)
   local inst=$(brew search | fzf-tmux --query="$1" +m --preview 'brew info {}')
 
   if [[ $inst ]]; then
