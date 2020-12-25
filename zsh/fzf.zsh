@@ -2,8 +2,8 @@ Rg() {
   local selected=$(
     rg --column --line-number --no-heading --color=always --smart-case "$1" |
       fzf --ansi --preview "~/.config/nvim/plugged/fzf.vim/bin/preview.sh {}" |
-			egrep -Eo "^([^:]+):" |
-			egrep -Eo "^([^:]+)"
+			egrep -Eo "^[^:]++:" |
+			egrep -Eo "[^:]*"
   )
   [ -n "$selected" ] && $EDITOR "$selected"
 }
