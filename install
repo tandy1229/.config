@@ -20,7 +20,7 @@ if [[ "$(uname)" = "Darwin" ]]; then
 		reattach-to-user-namespace bash-completion tmux gnuplot w3m yarn lazygit ccat \
 		fzf colordiff diffutils figlet git-delta gnu-sed gawk \
 		gnu-tar gnu-time grep htop less make openssl rainbarf rsync \
-		shfmt bashtop shellcheck vint
+		shfmt bashtop shellcheck vint composer
 
 	brew tap universal-ctags/universal-ctags
 	brew install --with-jansson --with-libyaml --HEAD universal-ctags/universal-ctags/universal-ctag
@@ -28,6 +28,9 @@ if [[ "$(uname)" = "Darwin" ]]; then
 	pip install ranger-fm pynvim ipython jupyter
 
 	brew install --HEAD neovim
+
+	composer require --dev phpstan/phpstan
+	composer require --dev vimeo/psalm
 
 	command -v blsd >/dev/null ||
 		(bash <(curl -fL https://raw.githubusercontent.com/junegunn/blsd/master/install) && mv blsd ~/bin)
