@@ -116,14 +116,6 @@ uninstall() {
     fi
 }
 
-j() {
-    if [[ "$#" -ne 0 ]]; then
-        cd $(autojump $@)
-        return
-    fi
-    cd "$(autojump -s | sort -k1gr | awk '$1 ~ /[0-9]:/ && $2 ~ /^\// { for (i=2; i<=NF; i++) { print $(i) } }' |  fzf --height 40% --reverse --inline-info)"
-}
-
 # Figlet font selector => copy to clipboard
 fgl() (
   [ $# -eq 0 ] && return
@@ -144,23 +136,6 @@ fco() {
     (echo "$tags"; echo "$branches") | sed '/^$/d' |
     fzf-down --no-hscroll --reverse --ansi +m -d "\t" -n 2 -q "$*") || return
   git checkout $(echo "$target" | awk '{print $2}')
-}
-
-if [ -d ~/github/iTerm2-Color-Schemes/ ]; then
-  ftheme() {
-    local base
-    base=~/github/iTerm2-Color-Schemes
-    $base/tools/preview.rb "$(
-      ls {$base/schemes,~/.vim/plugged/seoul256.vim/iterm2}/*.itermcolors | fzf)"
-  }
-fi
-
-# Switch tmux-sessions
-fs() {
-  local session
-  session=$(tmux list-sessions -F "#{session_name}" | \
-    fzf --height 40% --reverse --query="$1" --select-1 --exit-0) &&
-  tmux switch-client -t "$session"
 }
 
 # jq repl
