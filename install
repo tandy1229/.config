@@ -23,7 +23,7 @@ if [[ "$(uname)" = "Darwin" ]]; then
 		shfmt bashtop shellcheck vint composer
 
 	brew tap universal-ctags/universal-ctags
-	brew install --with-jansson --with-libyaml --HEAD universal-ctags/universal-ctags/universal-ctag
+	brew install --with-jansson --with-libyaml --with-docutils --HEAD universal-ctags/universal-ctags/universal-ctags
 
 	pip install ranger-fm pynvim ipython jupyter
 
