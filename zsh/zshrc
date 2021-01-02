@@ -8,7 +8,10 @@ source ~/.config/zsh/aliases.zsh
 source ~/.config/zsh/path.zsh
 source ~/.config/zsh/thefuck.zsh
 source ~/.config/zsh/fzf.zsh
-source ~/.config/zsh/competion.zsh
+source ~/.config/zsh/fzf-completion.zsh
+source ~/.config/zsh/completion.zsh
+
+zstyle ':autocomplete:tab:*' fzf-completion yes
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
