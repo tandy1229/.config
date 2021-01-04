@@ -1,7 +1,10 @@
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 export HOMEBREW_NO_ANALYTICS=1
-export EDITOR=nvim
-#
+if [[ "$(command -v nvim)" ]]; then
+    export EDITOR='nvim'
+    export MANPAGER='nvim +Man!'
+    export MANWIDTH=999
+fi
 
 # less show color
 export LESSOPEN="| /usr/local/Cellar/source-highlight/3.1.9_3/bin/src-hilite-lesspipe.sh %s"
