@@ -4,5 +4,3 @@ if [[ ! -d $PLUG_DIR  ]]; then
   rm ~/.zimrc
   ln -s ~/.config/zsh/zimrc ~/.zimrc
 fi
-
-
