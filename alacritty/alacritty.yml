@@ -62,7 +62,8 @@ env:
   # Values for `decorations` (macOS only):
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background and no title bar buttons
-  #decorations: full
+  # decorations: full
+  decorations: buttonless
 
   # Startup Mode (changes require restart)
   #
@@ -136,7 +137,7 @@ font:
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
     #family: monospace
-    family: SauceCodePro Nerd Font
+    family: Source Code Pro
 
     # The `style` can be specified to pick a specific face.
     style: Italic
@@ -148,7 +149,7 @@ font:
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
     #family: monospace
-    family: SauceCodePro Nerd Font
+    family: Source Code Pro 
 
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
