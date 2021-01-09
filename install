@@ -20,7 +20,7 @@ if [[ "$(uname)" = "Darwin" ]]; then
 		reattach-to-user-namespace bash-completion tmux gnuplot w3m yarn lazygit ccat \
 		fzf colordiff diffutils figlet git-delta gnu-sed gawk \
 		gnu-tar gnu-time grep htop less make openssl rainbarf rsync \
-		shfmt bashtop shellcheck vint composer cppman
+		shfmt bashtop shellcheck vint composer cppman translate-shell
 
 	brew tap universal-ctags/universal-ctags
 	brew install --with-jansson --with-libyaml --with-docutils --HEAD universal-ctags/universal-ctags/universal-ctags
