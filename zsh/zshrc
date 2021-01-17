@@ -6,7 +6,6 @@ export GPG_TTY=$(tty)
 source ~/.config/zsh/zim.zsh
 source ~/.config/zsh/aliases.zsh
 source ~/.config/zsh/path.zsh
-source ~/.config/zsh/thefuck.zsh
 source ~/.config/zsh/fzf.zsh
 source ~/.config/zsh/fzf-completion.zsh
 source ~/.config/zsh/completion.zsh
