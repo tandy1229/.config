@@ -13,6 +13,7 @@ bashtop/
 bpytop/
 ranger-back/
 ranger/trash_history
+__pycache__/
 kitty/
 cmus/
 yarn/
